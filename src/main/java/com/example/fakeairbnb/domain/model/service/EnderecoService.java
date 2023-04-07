@@ -23,9 +23,10 @@ public class EnderecoService {
     public Endereco findById(Long id) {
         return enderecoRepository.findById(id).orElseThrow(() -> new EnderecoNotFound("O Endereco Solicitado nao existe"));
     }
-    public Endereco update(Long id, Endereco Endereco){
-        Endereco Enderecodb = findById(id);
-        return enderecoRepository.save(Enderecodb);
+    public Endereco update(Long id, Endereco endereco){
+        enderecoRepository.findById(id).orElseThrow(() -> new EnderecoNotFound("O Endereco Solicitado nao existe"));
+        endereco.setId(id);
+        return enderecoRepository.save(endereco);
     }
     public void delete(Long id) {
         enderecoRepository.deleteById(id);

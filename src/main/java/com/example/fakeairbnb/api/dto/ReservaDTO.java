@@ -1,5 +1,6 @@
 package com.example.fakeairbnb.api.dto;
 
+import com.example.fakeairbnb.domain.model.entity.Lugar;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +16,7 @@ public class ReservaDTO {
 
     private Date inicio;
     private Date fim;
-    private int lugar;
+    private Lugar lugar;
     private String observacao;
 
 }
