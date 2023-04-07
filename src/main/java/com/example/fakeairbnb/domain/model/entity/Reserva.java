@@ -23,7 +23,9 @@ public class Reserva {
     private long id;
     private Date inicio;
     private Date fim;
-    private int lugar;
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "ID")
+    private Lugar lugar;
     private String observacao;
 
 }
