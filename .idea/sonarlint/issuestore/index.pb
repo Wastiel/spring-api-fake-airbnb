@@ -16,14 +16,8 @@ Dsrc/test/java/com/example/fakeairbnb/FakeairbnbApplicationTests.java,4\d\4da32
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 ~
 Nsrc/main/java/com/example/fakeairbnb/domain/model/exception/LugarNotFound.java,5\b\5bfb8cf5283458411ecf94ca6480db451dee2889
-Å
-Qsrc/main/java/com/example/fakeairbnb/domain/model/exception/EnderecoNotFound.java,f\8\f8f39ce0e2baa888e647196acdcd462ece4b10a0
-z
-Jsrc/main/java/com/example/fakeairbnb/api/exception/ApiExceptionDetail.java,9\6\96dc3ab3a24acae1df840aa78ef1d77fffc7173c
 m
 =src/main/java/com/example/fakeairbnb/api/Map/LugarMapper.java,4\b\4b216bb3191349a7313d5b8ca4feb42284eb62a2
-~
-Nsrc/main/java/com/example/fakeairbnb/api/exception/GlobalExceptionHandler.java,f\b\fb4dcb0779970b46df04c75e1d59f65e67afd4a2
 l
 <src/main/java/com/example/fakeairbnb/api/Form/LugarForm.java,1\1\111e1c71bda27b28d7507cc79cfcfd2c8dbc494b
 Ñ

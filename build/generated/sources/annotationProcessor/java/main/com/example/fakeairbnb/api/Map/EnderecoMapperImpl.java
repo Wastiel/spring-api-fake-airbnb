@@ -1,5 +1,6 @@
 package com.example.fakeairbnb.api.Map;
 
+import com.example.fakeairbnb.api.Form.EnderecoForm;
 import com.example.fakeairbnb.api.dto.EnderecoDTO;
 import com.example.fakeairbnb.domain.model.entity.Endereco;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-10T19:30:52-0300",
+    date = "2023-04-11T08:03:02-0300",
     comments = "version: 1.5.3.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.jar, environment: Java 17.0.6 (Amazon.com Inc.)"
 )
 @Component
@@ -65,5 +66,25 @@ public class EnderecoMapperImpl implements EnderecoMapper {
         enderecoDTO.complemento( endereco.getComplemento() );
 
         return enderecoDTO.build();
+    }
+
+    @Override
+    public Endereco map(EnderecoForm enderecoForm) {
+        if ( enderecoForm == null ) {
+            return null;
+        }
+
+        Endereco endereco = new Endereco();
+
+        endereco.setPais( enderecoForm.getPais() );
+        endereco.setEstado( enderecoForm.getEstado() );
+        endereco.setCidade( enderecoForm.getCidade() );
+        endereco.setRua( enderecoForm.getRua() );
+        if ( enderecoForm.getNumero() != null ) {
+            endereco.setNumero( enderecoForm.getNumero() );
+        }
+        endereco.setComplemento( enderecoForm.getComplemento() );
+
+        return endereco;
     }
 }
