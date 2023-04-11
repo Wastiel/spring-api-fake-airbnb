@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class LugarDTO {
 
+    long id;
     private String nome;
     private Endereco endereco;
     private String descricao;

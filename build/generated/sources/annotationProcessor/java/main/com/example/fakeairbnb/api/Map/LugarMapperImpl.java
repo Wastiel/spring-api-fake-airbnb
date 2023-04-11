@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-07T18:14:41-0300",
+    date = "2023-04-10T19:30:52-0300",
     comments = "version: 1.5.3.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.jar, environment: Java 17.0.6 (Amazon.com Inc.)"
 )
 @Component
@@ -23,6 +23,7 @@ public class LugarMapperImpl implements LugarMapper {
 
         Lugar lugar = new Lugar();
 
+        lugar.setId( lugarDTO.getId() );
         lugar.setNome( lugarDTO.getNome() );
         lugar.setEndereco( lugarDTO.getEndereco() );
         lugar.setDescricao( lugarDTO.getDescricao() );
@@ -53,6 +54,7 @@ public class LugarMapperImpl implements LugarMapper {
 
         LugarDTO.LugarDTOBuilder lugarDTO = LugarDTO.builder();
 
+        lugarDTO.id( lugar.getId() );
         lugarDTO.nome( lugar.getNome() );
         lugarDTO.endereco( lugar.getEndereco() );
         lugarDTO.descricao( lugar.getDescricao() );

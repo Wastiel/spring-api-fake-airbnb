@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -21,8 +22,8 @@ public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private Date inicio;
-    private Date fim;
+    private LocalDate dataInicio;
+    private LocalDate dataFim;
     @ManyToOne
     @JoinColumn(referencedColumnName = "ID")
     private Lugar lugar;
