@@ -17,11 +17,11 @@ public class EnderecoService {
     public List<Endereco> findAll(){
         return enderecoRepository.findAll();
     }
-    public Endereco create(Endereco Endereco) {
-        return enderecoRepository.save(Endereco);
-    }
     public Endereco findById(Long id) {
         return enderecoRepository.findById(id).orElseThrow(() -> new EnderecoNotFound("O Endereco Solicitado nao existe"));
+    }
+    public Endereco create(Endereco Endereco) {
+        return enderecoRepository.save(Endereco);
     }
     public Endereco update(Long id, Endereco endereco){
         enderecoRepository.findById(id).orElseThrow(() -> new EnderecoNotFound("O Endereco Solicitado nao existe"));

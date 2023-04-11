@@ -1,5 +1,6 @@
 package com.example.fakeairbnb.api.controller;
 
+import com.example.fakeairbnb.api.Form.EnderecoForm;
 import com.example.fakeairbnb.api.Map.EnderecoMapper;
 import com.example.fakeairbnb.api.dto.EnderecoDTO;
 import com.example.fakeairbnb.domain.model.service.EnderecoService;
@@ -27,12 +28,12 @@ public class EnderecoController {
         return ResponseEntity.ok(enderecoMapper.map(enderecoService.findById(id)));
     }
     @PostMapping
-    public ResponseEntity<EnderecoDTO> create(@RequestBody EnderecoDTO enderecoDTO){
-        return ResponseEntity.ok(enderecoMapper.map(enderecoService.create(enderecoMapper.map(enderecoDTO))));
+    public ResponseEntity<EnderecoDTO> create(@RequestBody EnderecoForm enderecoForm){
+        return ResponseEntity.ok(enderecoMapper.map(enderecoService.create(enderecoMapper.map(enderecoForm))));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<EnderecoDTO> update(@PathVariable Long id, @RequestBody EnderecoDTO enderecoDTO) {
-        return ResponseEntity.ok(enderecoMapper.map(enderecoService.update(id, enderecoMapper.map(enderecoDTO))));
+    public ResponseEntity<EnderecoDTO> update(@PathVariable Long id, @RequestBody EnderecoForm enderecoForm) {
+        return ResponseEntity.ok(enderecoMapper.map(enderecoService.update(id, enderecoMapper.map(enderecoForm))));
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
