@@ -1,5 +1,6 @@
 package com.example.fakeairbnb.api.Map;
 
+import com.example.fakeairbnb.api.Form.ReservaForm;
 import com.example.fakeairbnb.api.dto.ReservaDTO;
 import com.example.fakeairbnb.domain.model.entity.Reserva;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-10T19:39:38-0300",
+    date = "2023-04-11T09:00:46-0300",
     comments = "version: 1.5.3.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.jar, environment: Java 17.0.6 (Amazon.com Inc.)"
 )
 @Component
@@ -61,5 +62,21 @@ public class ReservaMapperImpl implements ReservaMapper {
         reservaDTO.observacao( reserva.getObservacao() );
 
         return reservaDTO.build();
+    }
+
+    @Override
+    public Reserva map(ReservaForm reservaForm) {
+        if ( reservaForm == null ) {
+            return null;
+        }
+
+        Reserva reserva = new Reserva();
+
+        reserva.setDataInicio( reservaForm.getDataInicio() );
+        reserva.setDataFim( reservaForm.getDataFim() );
+        reserva.setLugar( reservaForm.getLugar() );
+        reserva.setObservacao( reservaForm.getObservacao() );
+
+        return reserva;
     }
 }

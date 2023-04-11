@@ -7,6 +7,7 @@ import com.example.fakeairbnb.domain.model.service.EnderecoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,11 +29,11 @@ public class EnderecoController {
         return ResponseEntity.ok(enderecoMapper.map(enderecoService.findById(id)));
     }
     @PostMapping
-    public ResponseEntity<EnderecoDTO> create(@RequestBody EnderecoForm enderecoForm){
+    public ResponseEntity<EnderecoDTO> create(@RequestBody @Validated EnderecoForm enderecoForm){
         return ResponseEntity.ok(enderecoMapper.map(enderecoService.create(enderecoMapper.map(enderecoForm))));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<EnderecoDTO> update(@PathVariable Long id, @RequestBody EnderecoForm enderecoForm) {
+    public ResponseEntity<EnderecoDTO> update(@PathVariable Long id, @RequestBody @Validated EnderecoForm enderecoForm) {
         return ResponseEntity.ok(enderecoMapper.map(enderecoService.update(id, enderecoMapper.map(enderecoForm))));
     }
     @DeleteMapping("/{id}")

@@ -1,5 +1,6 @@
 package com.example.fakeairbnb.api.Map;
 
+import com.example.fakeairbnb.api.Form.LugarForm;
 import com.example.fakeairbnb.api.dto.LugarDTO;
 import com.example.fakeairbnb.domain.model.entity.Lugar;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-10T19:30:52-0300",
+    date = "2023-04-11T08:49:33-0300",
     comments = "version: 1.5.3.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.jar, environment: Java 17.0.6 (Amazon.com Inc.)"
 )
 @Component
@@ -23,7 +24,6 @@ public class LugarMapperImpl implements LugarMapper {
 
         Lugar lugar = new Lugar();
 
-        lugar.setId( lugarDTO.getId() );
         lugar.setNome( lugarDTO.getNome() );
         lugar.setEndereco( lugarDTO.getEndereco() );
         lugar.setDescricao( lugarDTO.getDescricao() );
@@ -54,12 +54,27 @@ public class LugarMapperImpl implements LugarMapper {
 
         LugarDTO.LugarDTOBuilder lugarDTO = LugarDTO.builder();
 
-        lugarDTO.id( lugar.getId() );
         lugarDTO.nome( lugar.getNome() );
         lugarDTO.endereco( lugar.getEndereco() );
         lugarDTO.descricao( lugar.getDescricao() );
         lugarDTO.valor( lugar.getValor() );
 
         return lugarDTO.build();
+    }
+
+    @Override
+    public Lugar map(LugarForm lugarForm) {
+        if ( lugarForm == null ) {
+            return null;
+        }
+
+        Lugar lugar = new Lugar();
+
+        lugar.setNome( lugarForm.getNome() );
+        lugar.setEndereco( lugarForm.getEndereco() );
+        lugar.setDescricao( lugarForm.getDescricao() );
+        lugar.setValor( lugarForm.getValor() );
+
+        return lugar;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.fakeairbnb.api.controller;
 
 
+import com.example.fakeairbnb.api.Form.LugarForm;
 import com.example.fakeairbnb.api.dto.LugarDTO;
 import com.example.fakeairbnb.api.Map.LugarMapper;
 import com.example.fakeairbnb.domain.model.entity.Lugar;
@@ -9,6 +10,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -32,21 +34,23 @@ public class LugarController {
                                                @RequestParam("dataFinal") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataFinal) {
         return lugarService.findUnreservedPlaces(dataInicial, dataFinal);
     }
-    @PostMapping
-    public ResponseEntity<LugarDTO> create(@RequestBody LugarDTO lugarDTO) {
-        return ResponseEntity.ok(lugarMapper.map(lugarService.create(lugarMapper.map(lugarDTO))));
-    }
-    @GetMapping("/{id}")
     public ResponseEntity<LugarDTO> findById(@PathVariable Long id){
         return ResponseEntity.ok(lugarMapper.map(lugarService.findById(id)));
     }
+    @PostMapping
+    public ResponseEntity<LugarDTO> create(@RequestBody @Validated LugarForm lugarForm) {
+        return ResponseEntity.ok(lugarMapper.map(lugarService.create(lugarMapper.map(lugarForm))));
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<LugarDTO> update(@PathVariable Long id, @RequestBody @Validated LugarForm lugarForm) {
+        return ResponseEntity.ok(lugarMapper.map(lugarService.update(id, lugarMapper.map(lugarForm))));
+    }
+    @GetMapping("/{id}")
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {lugarService.delete(id);
     return ResponseEntity.status(HttpStatus.OK).build();
     }
-    @PutMapping("/{id}")
-    public ResponseEntity<LugarDTO> update(@PathVariable Long id, @RequestBody LugarDTO lugarDTO) {
-        return ResponseEntity.ok(lugarMapper.map(lugarService.update(id, lugarMapper.map(lugarDTO))));
-    }
+
 
 }
