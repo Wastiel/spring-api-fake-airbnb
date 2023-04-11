@@ -33,7 +33,7 @@ public class EnderecoController {
         return ResponseEntity.ok(enderecoMapper.map(enderecoService.create(enderecoMapper.map(enderecoForm))));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<EnderecoDTO> update(@PathVariable Long id, @RequestBody EnderecoForm enderecoForm) {
+    public ResponseEntity<EnderecoDTO> update(@PathVariable Long id, @RequestBody @Validated EnderecoForm enderecoForm) {
         return ResponseEntity.ok(enderecoMapper.map(enderecoService.update(id, enderecoMapper.map(enderecoForm))));
     }
     @DeleteMapping("/{id}")

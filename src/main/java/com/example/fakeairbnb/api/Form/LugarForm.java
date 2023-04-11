@@ -1,7 +1,8 @@
 package com.example.fakeairbnb.api.Form;
 
 
-import jakarta.validation.constraints.NotEmpty;
+import com.example.fakeairbnb.domain.model.entity.Endereco;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,11 +10,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class LugarForm {
-    @NotEmpty
+    @NotBlank
     private String nome;
-    @NotNull
-    private int endereco;
-    @NotNull
+
+    private Endereco endereco;
+    @NotBlank
     private String descricao;
     @NotNull
     private double valor;

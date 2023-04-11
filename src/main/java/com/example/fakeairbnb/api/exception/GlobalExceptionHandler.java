@@ -28,9 +28,8 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public ApiExceptionDetail handleValidationException(MethodArgumentNotValidException e) {
         log.error("deu exception aqui");
-        return new ApiExceptionDetail(HttpStatus.BAD_REQUEST, "Campos enviados invalidos");
+        return new ApiExceptionDetail(HttpStatus.BAD_REQUEST, e.getBindingResult().getFieldError().getDefaultMessage());
     }
-
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(LugarNotFound.class)
     @ResponseBody

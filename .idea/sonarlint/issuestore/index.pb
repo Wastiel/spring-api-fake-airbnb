@@ -6,8 +6,6 @@
 gradlew,5\b\5bbfa66edb4db3c7c33c5181f43510990d3307f9
 ;
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
-n
->src/main/java/com/example/fakeairbnb/api/Form/ReservaForm.java,3\b\3bf573ac9e28f2d3d341094fb126e908aa66b833
 o
 ?src/main/java/com/example/fakeairbnb/FakeairbnbApplication.java,d\8\d8aec7b4c3fe6a44a5e2f3587ebf23bdd50dcd57
 t
@@ -16,23 +14,11 @@ Dsrc/test/java/com/example/fakeairbnb/FakeairbnbApplicationTests.java,4\d\4da32
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 ~
 Nsrc/main/java/com/example/fakeairbnb/domain/model/exception/LugarNotFound.java,5\b\5bfb8cf5283458411ecf94ca6480db451dee2889
-m
-=src/main/java/com/example/fakeairbnb/api/Map/LugarMapper.java,4\b\4b216bb3191349a7313d5b8ca4feb42284eb62a2
-l
-<src/main/java/com/example/fakeairbnb/api/Form/LugarForm.java,1\1\111e1c71bda27b28d7507cc79cfcfd2c8dbc494b
 „
 Tsrc/main/java/com/example/fakeairbnb/domain/model/repository/EnderecoRepository.java,c\c\cc9e01e9f198d2907ba57986c2eff5d6ad8dac00
 v
 Fsrc/main/java/com/example/fakeairbnb/domain/model/entity/Endereco.java,9\4\94d7d454c1759e56a05596b6e1945b48a00217d3
-o
-?src/main/java/com/example/fakeairbnb/api/Map/ReservaMapper.java,0\2\02f1a0c377d4e69203de18adb836ceabe88bb34f
-m
-=src/main/java/com/example/fakeairbnb/api/dto/EnderecoDTO.java,3\0\30d3128c5bb02eafc74438b84a5875c66e6bd3e0
-j
-:src/main/java/com/example/fakeairbnb/api/dto/LugarDTO.java,3\2\3212b84a8e23115c4fdeaec12c3a13dea53f8dc4
 s
 Csrc/main/java/com/example/fakeairbnb/domain/model/entity/Lugar.java,8\5\85f9fb045b5b91f6f053c887d73399d3539b0172
-l
-<src/main/java/com/example/fakeairbnb/api/dto/ReservaDTO.java,5\b\5bbbce9c1e9d1527bc45977d4afe15872b5f8f35
 
 Qsrc/main/java/com/example/fakeairbnb/domain/model/repository/LugarRepository.java,a\a\aaff02225e7889e8c0090c1058f93e7494d51cb0
