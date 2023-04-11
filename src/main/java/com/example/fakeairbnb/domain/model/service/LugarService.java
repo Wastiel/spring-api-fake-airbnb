@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Slf4j
@@ -23,11 +24,11 @@ public class LugarService {
     public List<Lugar> findAll(){
         return lugarRepository.findAll();
     }
-
     public Lugar create(Lugar lugar) {
         lugar.setEndereco(enderecoRepository.findById(lugar.getEndereco().getId()).orElseThrow(() -> new EnderecoNotFound("O endereco que estas tentando cadastrar nao existe no sistema")));
         return lugarRepository.save(lugar);
     }
+
     public Lugar findById(Long id) {
         return lugarRepository.findById(id).orElseThrow(() -> new LugarNotFound("O Lugar solicitado nao existe"));
     }
@@ -38,8 +39,11 @@ public class LugarService {
         return lugarRepository.save(lugar);
 
     }
-
     public void delete(Long id) {
         lugarRepository.deleteById(id);
+    }
+
+    public List<Lugar> findUnreservedPlaces(LocalDate dataInicial, LocalDate dataFinal) {
+        return lugarRepository.findLugaresNaoReservados(dataInicial, dataFinal);
     }
 }

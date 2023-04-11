@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-04-07T18:14:41-0300",
+    date = "2023-04-10T19:39:38-0300",
     comments = "version: 1.5.3.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.jar, environment: Java 17.0.6 (Amazon.com Inc.)"
 )
 @Component
@@ -23,8 +23,9 @@ public class ReservaMapperImpl implements ReservaMapper {
 
         Reserva reserva = new Reserva();
 
-        reserva.setInicio( reservaDTO.getInicio() );
-        reserva.setFim( reservaDTO.getFim() );
+        reserva.setId( reservaDTO.getId() );
+        reserva.setDataInicio( reservaDTO.getDataInicio() );
+        reserva.setDataFim( reservaDTO.getDataFim() );
         reserva.setLugar( reservaDTO.getLugar() );
         reserva.setObservacao( reservaDTO.getObservacao() );
 
@@ -53,8 +54,9 @@ public class ReservaMapperImpl implements ReservaMapper {
 
         ReservaDTO.ReservaDTOBuilder reservaDTO = ReservaDTO.builder();
 
-        reservaDTO.inicio( reserva.getInicio() );
-        reservaDTO.fim( reserva.getFim() );
+        reservaDTO.id( reserva.getId() );
+        reservaDTO.dataInicio( reserva.getDataInicio() );
+        reservaDTO.dataFim( reserva.getDataFim() );
         reservaDTO.lugar( reserva.getLugar() );
         reservaDTO.observacao( reserva.getObservacao() );
 

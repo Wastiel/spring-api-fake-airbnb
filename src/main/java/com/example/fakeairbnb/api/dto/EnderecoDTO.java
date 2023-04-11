@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class EnderecoDTO {
 
 
+    long id;
     private String pais;
     private String estado;
     private String cidade;
