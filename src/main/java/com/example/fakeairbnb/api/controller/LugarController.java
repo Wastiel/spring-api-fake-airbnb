@@ -30,7 +30,7 @@ public class LugarController {
           return ResponseEntity.ok(lugarMapper.map(lugarService.findAll()));
     }
     @GetMapping("/findUnreservedPlaces")
-    public List<Lugar> getLugaresNaoReservados(@RequestParam("dataInicial") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataInicial,
+    public List<Lugar> findUnreservedPlaces(@RequestParam("dataInicial") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataInicial,
                                                @RequestParam("dataFinal") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dataFinal) {
         return lugarService.findUnreservedPlaces(dataInicial, dataFinal);
     }
